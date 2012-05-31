@@ -1,0 +1,32 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>NWIS Snapshot for ArcMap10</Name>
+  <AddInID>{a98c75b9-3cc5-487c-bd49-466a466ff95b}</AddInID>
+  <Description>NWIS Snapshot add-in for ArcMap10 using .NET 3.5 Framework</Description>
+  <Version>1.0</Version>
+  <Image>Images\Snapshot.png</Image>
+  <Author>jvrabel</Author>
+  <Company>U.S. Geological Survey WRD TX-WSC Austin</Company>
+  <Date>7/21/2011</Date>
+  <Targets>
+    <Target name="Desktop" version="10.0" />
+  </Targets>
+  <AddIn language="CLR" library="Snapshot.dll" namespace="Snapshot">
+    <ArcMap>
+      <Commands>
+        <Button id="btnMenuLaunch" class="btnMenuLaunch" message="Toolbar button to launch NWIS Snapshot" caption="NWIS Snapshot" tip="NWIS Snapshot" category="Add-In Controls" image="Images\btnMenuLaunch.png" />
+      </Commands>
+      <DockableWindows>
+        <DockableWindow id="docSnapshot" class="docSnapshot+AddinImpl" caption="NWIS Snapshot" image="Images\docSnapshot.png">
+          <InitialPlacement height="300" width="300" state="unpinned" position="left" />
+        </DockableWindow>
+      </DockableWindows>
+      <Toolbars>
+        <Toolbar id="NWIS_Snapshot_for_ArcMap10" caption="NWIS Snapshot for ArcMap10" showInitially="true">
+          <Items>
+            <Button refID="btnMenuLaunch" />
+          </Items>
+        </Toolbar>
+      </Toolbars>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
